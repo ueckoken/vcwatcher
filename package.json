@@ -8,10 +8,12 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.19.9",
+    "discord.js": "^14.25.1",
     "hono": "^4.11.7"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
+    "dotenv": "^17.2.3",
     "tsx": "^4.7.1",
     "typescript": "^5.8.3"
   }
