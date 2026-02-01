@@ -19,6 +19,13 @@ client.on(Events.ClientReady, readyClient => {
   if (vcChannel) console.log(`Watching ${vcChannel.name}`)
 })
 
+client.on(Events.VoiceStateUpdate, (oldState, newState) => {
+  if (!vcChannel) return
+  if (newState.channel?.id === vcChannel.id || oldState.channel?.id === vcChannel.id) {
+    newState.member && console.log(newState.member.user.username, newState.channel ? 'connected.' : 'disconnected.')
+  }
+})
+
 const app = new Hono()
 
 app.get('/', (c) => {
