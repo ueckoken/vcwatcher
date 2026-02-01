@@ -1,4 +1,5 @@
 import { serve } from '@hono/node-server'
+import { serveStatic } from '@hono/node-server/serve-static'
 import { createNodeWebSocket } from '@hono/node-ws'
 import { Hono } from 'hono'
 import { type WSContext } from 'hono/ws'
@@ -36,9 +37,7 @@ const app = new Hono()
 
 const { injectWebSocket, upgradeWebSocket } = createNodeWebSocket({ app })
 
-app.get('/', (c) => {
-  return c.json({ members: vcChannel?.members })
-})
+app.use("*", serveStatic({ root: './frontend/dist' }))
 
 app.get('/ws', upgradeWebSocket((_c) => ({
   onOpen(_event, ws) {
