@@ -13,6 +13,9 @@
     "discord.js": "^14.25.1",
     "hono": "^4.11.7"
   },
+  "overrides": {
+    "vite": "npm:rolldown-vite@latest"
+  },
   "devDependencies": {
     "@types/node": "^20.11.17",
     "dotenv": "^17.2.3",
