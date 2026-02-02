@@ -37,7 +37,7 @@ onMount(() => {
   <div class="p-8 flex flex-col gap-6">
     {#each members as member}
       <div class="flex items-center gap-6">
-        <img src={member.displayAvatarURL} alt={member.id} class="h-14 rounded-full" />
+        <img src={member.displayAvatarURL} alt={member.id} class="h-14 w-14 rounded-full" />
         <div class="break-all">
           <div class="text-2xl">{member.displayName}</div>
           <div class="text-sm">@{member.username}</div>
