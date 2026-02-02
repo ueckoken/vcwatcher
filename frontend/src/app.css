@@ -2,3 +2,7 @@
 @plugin "daisyui" {
   themes: dark --default;
 }
+html, body {
+  cursor: none;
+  height: 100%;
+}
